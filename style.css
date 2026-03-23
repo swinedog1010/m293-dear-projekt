@@ -1,0 +1,253 @@
+/* --- 1. CSS VARIABLEN (Aus dem Styleguide) --- */
+:root {
+    --color-primary: #4f46e5;
+    --color-secondary: #f43f5e;
+    --color-bg: #f8fafc;
+    --color-text: #334155;
+    --color-card: #ffffff;
+
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* --- 2. RESET & GRUNDLAGEN --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+/* --- 3. HEADER & NAVIGATION --- */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: var(--color-card);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav a {
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: var(--color-primary);
+}
+
+/* --- 4. HERO SECTION --- */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #e0e7ff; /* Helles Indigo */
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* --- 5. PODCAST GRID --- */
+.latest-podcasts, .categories {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.podcast-grid {
+    display: grid;
+    /* Responsive Grid: Passt sich automatisch an Desktop, Tablet und Handy an */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.podcast-card {
+    background-color: var(--color-card);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.podcast-card:hover {
+    transform: translateY(-5px);
+}
+
+.cover-placeholder {
+    aspect-ratio: 9/16;
+    background-color: #cbd5e1;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.author {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+/* --- 6. KATEGORIEN --- */
+.category-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.category-pill {
+    background-color: var(--color-card);
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.category-pill:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+/* --- 7. FOOTER & NEWSLETTER --- */
+.site-footer {
+    background-color: var(--color-text);
+    color: white;
+    padding: 50px 5% 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.site-footer h3 {
+    color: white;
+}
+
+.newsletter-form {
+    margin: 20px auto 40px;
+    max-width: 400px;
+    display: flex;
+    gap: 10px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 6px;
+    font-family: var(--font-body);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: var(--font-body);
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #4338ca;
+}
+
+.copyright {
+    border-top: 1px solid #475569;
+    padding-top: 20px;
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+/* --- 8. BÜCHERSEITE (Filter & Tags) --- */
+.page-content {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.books-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.filter-bar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.filter-btn {
+    background-color: var(--color-bg);
+    border: 1px solid #cbd5e1;
+    color: var(--color-text);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+.genre-tag {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.75rem;
+    background-color: #e0e7ff;
+    color: var(--color-primary);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
