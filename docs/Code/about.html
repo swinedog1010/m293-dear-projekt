@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über D.E.A.R. | Das Projekt</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">D.E.A.R. 📚</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="buecher.html">Bücher</a></li>
+                    <li><a href="about.html" class="active">Über uns</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="about-content">
+            <h1>Unsere Mission: Lesen hörbar machen</h1>
+            <p class="lead">D.E.A.R. (Drop Everything And Read) ist ein Startup-Projekt von Lernenden für Lernende. Wir glauben, dass jedes Buch eine Chance verdient – auch wenn die Zeit im Alltag knapp ist.</p>
+            
+            <div class="mission-grid">
+                <div class="mission-item">
+                    <h3>Die Idee</h3>
+                    <p>Wir fassen die Kernthemen spannender Bücher in 5-minütigen Podcasts zusammen, damit du sofort weisst, ob sich das Lesen für dich lohnt.</p>
+                </div>
+                <div class="mission-item">
+                    <h3>Für wen?</h3>
+                    <p>Primär für Auszubildende und Schüler, die ihr Wissen erweitern wollen, ohne Stunden in der Bibliothek zu verbringen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="contact-card">
+                <h2>Schreib uns eine Nachricht</h2>
+                <p>Hast du einen Buchvorschlag oder möchtest selbst einen Podcast aufnehmen?</p>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Dein Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-Mail</label>
+                        <input type="email" id="email" name="email" placeholder="deine@mail.ch" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Nachricht</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Was brennt dir auf der Seele?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Nachricht senden</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2026 D.E.A.R. Projekt | Ein Startup-Konzept von Viggo</p>
+        </div>
+    </footer>
+
+</body>
+</html>

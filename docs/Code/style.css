@@ -1,0 +1,371 @@
+/* 1. Variablen & Reset */
+:root {
+    --primary: #4f46e5;
+    --secondary: #f43f5e;
+    --bg-light: #f8fafc;
+    --text-dark: #334155;
+    --white: #ffffff;
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 2. Header & Navigation */
+.main-header {
+    background: var(--white);
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: var(--primary);
+}
+
+/* 3. Hero Section */
+.hero {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+/* 4. Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    margin-left: 10px;
+}
+
+/* 5. Footer */
+.main-footer {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+/* 6. Book Detail Page */
+.book-detail {
+    background: var(--white);
+    padding: 40px;
+    margin-top: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.book-header {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap; /* Wichtig für Mobile-Ansicht */
+}
+
+.book-cover-placeholder {
+    width: 200px;
+    height: 300px;
+    background: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.book-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--secondary);
+    color: var(--white);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.book-info h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.author {
+    font-size: 1.2rem;
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+/* 7. Audio Player Styling */
+.audio-container {
+    background: var(--bg-light);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid var(--primary);
+}
+
+.audio-container h3 {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+audio {
+    width: 100%;
+}
+
+.book-description h2 {
+    font-family: var(--font-heading);
+    margin-bottom: 15px;
+}
+
+.book-description p {
+    margin-bottom: 15px;
+}
+
+/* 8. Books Overview Page */
+.page-title {
+    text-align: center;
+    margin: 60px 0 40px;
+}
+
+.page-title h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--text-dark);
+}
+
+/* Das Grid Layout */
+.book-grid {
+    display: grid;
+    /* Erklärt: Erstelle so viele Spalten wie Platz ist, mindestens 250px breit */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+/* Die Karten-Styles */
+.book-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden; /* Damit das Bild oben abgerundet bleibt */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.15);
+}
+
+.card-image {
+    height: 180px;
+    background: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-category {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--primary);
+    letter-spacing: 1px;
+}
+
+.card-content h3 {
+    font-family: var(--font-heading);
+    margin: 5px 0 10px;
+    font-size: 1.25rem;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.btn-text {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.btn-text:hover {
+    text-decoration: underline;
+}
+
+/* 9. About & Contact Page */
+.about-content {
+    margin: 80px 0;
+    text-align: center;
+}
+
+.about-content h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.lead {
+    font-size: 1.3rem;
+    color: #64748b;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    text-align: left;
+    margin-top: 60px;
+}
+
+.mission-item h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+/* Kontakt-Formular Styling */
+.contact-section {
+    padding-bottom: 100px;
+}
+
+.contact-card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.contact-form .btn-primary {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
