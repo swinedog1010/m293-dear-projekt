@@ -369,3 +369,32 @@ audio {
     cursor: pointer;
     font-size: 1rem;
 }
+
+/* 1. Den Header etwas schlanker machen */
+.main-header {
+    background: var(--white);
+    padding: 10px 0; /* Abstand oben/unten verkleinert, da das Logo schon Platz braucht */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* 2. Sicherstellen, dass alles exakt in der Mitte zentriert ist */
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Das ist der Befehl, der Text und Logo auf einer unsichtbaren Mittellinie hält */
+}
+
+/* 3. Die perfekte Logo-Grösse */
+.logo {
+    text-decoration: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 100px; /* Der goldene Mittelweg für dieses Logo */
+    width: auto;
+    display: block;
+    mix-blend-mode: multiply; /* Kleiner Profi-Trick: Macht einen weissen Bild-Hintergrund transparent! */
+}
