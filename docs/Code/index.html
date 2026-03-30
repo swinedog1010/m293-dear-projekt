@@ -1,60 +1,420 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D.E.A.R. - Drop Everything And Read</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>D.E.A.R. – Drop Everything And Read</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <header class="main-header">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <img src="d.e.a.r_logo.png" alt="D.E.A.R. Projekt Logo, TBZ">
-            </a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="buecher.html">Bücher</a></li>
-                    <li><a href="about.html">Über uns</a></li>
-                </ul>
-            </nav>
+  <!-- ===== STICKY HEADER ===== -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner container">
+      <a href="#" class="logo-link">
+        <img src="d.e.a.r_logo.png" alt="D.E.A.R. Logo" class="logo-img" />
+      </a>
+      <nav class="main-nav" aria-label="Hauptnavigation">
+        <a href="#">Home</a>
+        <a href="#">Bücher</a>
+        <a href="#">About</a>
+      </nav>
+      <a href="#cta" class="btn btn-primary btn-sm">Jetzt starten</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="hero">
+      <!-- Animated background blobs -->
+      <div class="blob blob-1" aria-hidden="true"></div>
+      <div class="blob blob-2" aria-hidden="true"></div>
+      <div class="blob blob-3" aria-hidden="true"></div>
+      <div class="hero-grid-overlay" aria-hidden="true"></div>
+
+      <div class="container hero-content">
+        <div class="hero-badge fade-up">
+          <span class="badge-dot"></span>
+          Neu: Über 50 Bücher jetzt verfügbar
         </div>
-    </header>
-
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1>Lass alles stehen und <span>lies.</span></h1>
-                <p>Spannende Buchvorstellungen von Lernenden für Lernende – jetzt als Kurz-Podcast entdecken.</p>
-                <div class="hero-btns">
-                    <a href="buecher.html" class="btn btn-primary">Jetzt reinhören</a>
-                    <a href="about.html" class="btn btn-secondary">Mehr erfahren</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="features">
-            <div class="container">
-                <div class="feature-card">
-                    <h3>🎧 Kurz & Knackig</h3>
-                    <p>In maximal 5 Minuten weisst du, ob das Buch dein nächstes Highlight wird.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>📱 Überall dabei</h3>
-                    <p>Höre die Podcasts auf dem Weg zur Arbeit oder in der Pause.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="main-footer">
-        <div class="container">
-            <p>&copy; 2026 D.E.A.R. Projekt | Ein Startup-Konzept von Viggo</p>
+        <h1 class="hero-headline fade-up delay-1">
+          Lass alles<br />
+          <span class="gradient-text">stehen und lies.</span>
+        </h1>
+        <p class="hero-sub fade-up delay-2">
+          D.E.A.R. fasst die besten Bücher in 5-minütigen Podcasts zusammen –
+          gemacht für Lernende und Azubis, die keine Zeit haben, aber trotzdem
+          mehr wissen wollen.
+        </p>
+        <div class="hero-actions fade-up delay-3">
+          <a href="#featured" class="btn btn-primary btn-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            Jetzt reinhören
+          </a>
+          <a href="#how-it-works" class="btn btn-ghost btn-lg">Wie es funktioniert →</a>
         </div>
-    </footer>
+        <div class="hero-stats fade-up delay-4">
+          <div class="stat">
+            <span class="stat-num">50+</span>
+            <span class="stat-label">Bücher</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat">
+            <span class="stat-num">5 Min</span>
+            <span class="stat-label">pro Folge</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">kostenlos</span>
+          </div>
+        </div>
+      </div>
 
+      <!-- Floating podcast card decoration -->
+      <div class="hero-card-float fade-up delay-3" aria-hidden="true">
+        <div class="float-card">
+          <div class="float-card-icon">🎧</div>
+          <div class="float-card-text">
+            <strong>Gerade populär</strong>
+            <span>Atomic Habits – 4:52</span>
+          </div>
+          <div class="float-card-play">▶</div>
+        </div>
+        <div class="float-card float-card-2">
+          <div class="float-card-icon">🔥</div>
+          <div class="float-card-text">
+            <strong>Neu</strong>
+            <span>The Lean Startup</span>
+          </div>
+          <div class="float-card-play">▶</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="how-it-works section-padding" id="how-it-works">
+      <div class="container">
+        <div class="section-label fade-up">Einfach. Schnell. Clever.</div>
+        <h2 class="section-title fade-up delay-1">So funktioniert's</h2>
+        <p class="section-sub fade-up delay-2">
+          Drei Schritte trennen dich von deinem nächsten Wissens-Boost – egal ob im Tram, in der Pause oder vor dem Einschlafen.
+        </p>
+
+        <div class="bento-grid fade-up delay-2">
+          <!-- Step 1 -->
+          <div class="bento-card bento-main">
+            <div class="step-number">01</div>
+            <div class="bento-icon">📚</div>
+            <h3>Buch finden</h3>
+            <p>Stöbere durch unsere wachsende Bibliothek aus Sachbüchern, Romanen und Biografien – kuratiert für Neugierige wie dich. Nutze Filter nach Genre, Länge oder Thema.</p>
+            <div class="bento-tag">50+ Titel</div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="bento-card bento-secondary">
+            <div class="step-number">02</div>
+            <div class="bento-icon">▶️</div>
+            <h3>Play drücken</h3>
+            <p>In nur 5 Minuten erhältst du die wichtigsten Erkenntnisse, Kernthesen und Aha-Momente – präsentiert von echten Stimmen, nicht von Robotern.</p>
+            <div class="bento-tag">≤ 5 Min</div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="bento-card bento-accent">
+            <div class="step-number">03</div>
+            <div class="bento-icon">🧠</div>
+            <h3>Schlauer werden</h3>
+            <p>Speichere Notizen, teile Folgen mit Kolleg:innen und bau dir so Schritt für Schritt ein solides Wissensfundament auf – ganz ohne Stress.</p>
+            <div class="bento-tag">Wissen bleibt</div>
+          </div>
+
+          <!-- Wide card -->
+          <div class="bento-card bento-wide">
+            <div class="bento-icon-sm">⚡</div>
+            <p class="bento-quote">"Nicht die Zeit fehlt uns – sondern das richtige Format."</p>
+            <span class="bento-author">D.E.A.R. Manifest</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FEATURED EPISODES ===== -->
+    <section class="featured section-padding" id="featured">
+      <div class="container">
+        <div class="section-label fade-up">Aktuell beliebt</div>
+        <h2 class="section-title fade-up delay-1">Aktuelle Highlights</h2>
+        <p class="section-sub fade-up delay-2">
+          Diese drei Folgen sind gerade heiß begehrt – und du weißt in unter 5 Minuten mehr als vorher.
+        </p>
+
+        <div class="episode-grid">
+          <!-- Krimi Card -->
+          <article class="episode-card fade-up delay-1">
+            <div class="episode-cover" style="--cover-color: #1e1b4b;">
+              <span class="episode-emoji">🔪</span>
+              <div class="episode-genre-tag">Krimi</div>
+            </div>
+            <div class="episode-body">
+              <div class="episode-meta">
+                <span class="episode-dur">⏱ 4:30 Min</span>
+                <span class="episode-new">Neu</span>
+              </div>
+              <h3 class="episode-title">The Girl with the Dragon Tattoo</h3>
+              <p class="episode-desc">Journalist Mikael Blomkvist ermittelt in einem Jahrzehnte alten Verschwinden – und deckt dabei Abgründe auf, die niemand sehen wollte. Ein Krimi mit Tiefgang.</p>
+              <button class="btn btn-episode">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                Reinhören
+              </button>
+            </div>
+          </article>
+
+          <!-- Sci-Fi Card -->
+          <article class="episode-card episode-card-featured fade-up delay-2">
+            <div class="episode-cover" style="--cover-color: #0f172a;">
+              <span class="episode-emoji">🚀</span>
+              <div class="episode-genre-tag">Sci-Fi</div>
+              <div class="episode-featured-badge">⭐ Top Pick</div>
+            </div>
+            <div class="episode-body">
+              <div class="episode-meta">
+                <span class="episode-dur">⏱ 5:00 Min</span>
+                <span class="episode-plays">🎧 2.4k Plays</span>
+              </div>
+              <h3 class="episode-title">Dune – Der Wüstenplanet</h3>
+              <p class="episode-desc">Macht, Ressourcen und Prophecy: Frank Herberts Meisterwerk erzählt eine politische Saga, die relevanter ist denn je. Ideal als Einstieg ins Sci-Fi-Genre.</p>
+              <button class="btn btn-episode btn-episode-primary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                Reinhören
+              </button>
+            </div>
+          </article>
+
+          <!-- Biografie Card -->
+          <article class="episode-card fade-up delay-3">
+            <div class="episode-cover" style="--cover-color: #1a0a2e;">
+              <span class="episode-emoji">🧬</span>
+              <div class="episode-genre-tag">Biografie</div>
+            </div>
+            <div class="episode-body">
+              <div class="episode-meta">
+                <span class="episode-dur">⏱ 4:45 Min</span>
+                <span class="episode-new">Beliebt</span>
+              </div>
+              <h3 class="episode-title">Elon Musk – Die Biografie</h3>
+              <p class="episode-desc">Wie denkt ein Mensch, der Tesla, SpaceX und Neuralink gleichzeitig aufbaut? Walter Isaacsons Porträt über einen der umstrittensten Unternehmer unserer Zeit.</p>
+              <button class="btn btn-episode">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                Reinhören
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <div class="featured-cta fade-up">
+          <a href="#" class="btn btn-ghost">Alle Folgen entdecken →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BENEFITS ===== -->
+    <section class="benefits section-padding" id="benefits">
+      <div class="container">
+        <div class="benefits-inner">
+          <div class="benefits-text fade-up">
+            <div class="section-label">Gemacht für euch</div>
+            <h2 class="section-title">Warum D.E.A.R. für Lernende perfekt ist</h2>
+            <p class="section-sub">
+              Wir wissen, wie Ausbildungsalltag wirklich aussieht. Deshalb haben wir D.E.A.R. von Grund auf für Menschen gebaut, die viel vorhaben – und wenig Zeit.
+            </p>
+            <a href="#cta" class="btn btn-primary btn-lg">Kostenlos ausprobieren</a>
+          </div>
+
+          <div class="benefits-grid fade-up delay-2">
+            <div class="benefit-item">
+              <div class="benefit-icon">🚌</div>
+              <div>
+                <h4>Unterwegs lernen</h4>
+                <p>Perfekt für den Weg zur Schule oder Arbeit. Kein Buch nötig – nur dein Handy und Kopfhörer.</p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon">📝</div>
+              <div>
+                <h4>Prüfungsrelevantes Wissen</h4>
+                <p>Viele unserer Titel decken Themen ab, die in Abschluss- und Semesterprüfungen auftauchen.</p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon">⏰</div>
+              <div>
+                <h4>Nur 5 Minuten</h4>
+                <p>Kürzer als eine durchschnittliche TikTok-Session – aber mit echtem Mehrwert für dein Leben.</p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon">🎯</div>
+              <div>
+                <h4>Gezielt filtern</h4>
+                <p>Nach Beruf, Interesse oder Fach filtern und genau das finden, was dir gerade am meisten hilft.</p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon">🆓</div>
+              <div>
+                <h4>Komplett kostenlos</h4>
+                <p>Kein Abo, kein Paywall. D.E.A.R. glaubt: Wissen sollte für alle zugänglich sein.</p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon">🌐</div>
+              <div>
+                <h4>Offline verfügbar</h4>
+                <p>Folgen herunterladen und auch ohne Internet hören – ideal für Züge oder den Keller.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="testimonials section-padding" id="testimonials">
+      <div class="container">
+        <div class="section-label fade-up">Community</div>
+        <h2 class="section-title fade-up delay-1">Stimmen von Lernenden</h2>
+        <p class="section-sub fade-up delay-2">Wir machen das nicht für uns – sondern für alle, die mehr wollen.</p>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card fade-up delay-1">
+            <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+            <blockquote>
+              "Ich hab durch D.E.A.R. im dritten Lehrjahr endlich angefangen, wieder Bücher zu konsumieren. Die 5-Minuten-Formate passen perfekt in meine Mittagspause. Seitdem hab ich bestimmt 20 Bücher 'gehört'."
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar">LM</div>
+              <div>
+                <strong>Lena M.</strong>
+                <span>Kauffrau EFZ, 18 – Zürich</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card testimonial-card-featured fade-up delay-2">
+            <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+            <blockquote>
+              "Als Polymechaniker-Lernender hab ich nicht viel Zeit zum Lesen. Dune auf D.E.A.R. hat mich so gecatcht, dass ich danach das echte Buch gekauft hab. Kein Witz. Bestes Format ever."
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar">NK</div>
+              <div>
+                <strong>Noah K.</strong>
+                <span>Polymechaniker EFZ, 17 – Winterthur</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card fade-up delay-3">
+            <div class="stars" aria-label="4 von 5 Sternen">★★★★☆</div>
+            <blockquote>
+              "Ich empfehle D.E.A.R. allen in meiner Klasse. Vor allem die Biografien sind klasse – ich hab mehr über Steve Jobs gelernt als in jedem BWL-Unterricht. Weiter so, Viggo!"
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar">SA</div>
+              <div>
+                <strong>Sara A.</strong>
+                <span>Informatikerin EFZ, 19 – Zürich</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BOTTOM CTA ===== -->
+    <section class="bottom-cta section-padding" id="cta">
+      <div class="container">
+        <div class="cta-box fade-up">
+          <div class="cta-blob" aria-hidden="true"></div>
+          <div class="cta-content">
+            <div class="cta-emoji">📖</div>
+            <h2>Bereit, schlauer zu werden?</h2>
+            <p>
+              Starte noch heute kostenlos. Kein Konto nötig, kein Abo, keine Ausreden.
+              Einfach Play drücken – und die Welt ein bisschen besser verstehen.
+            </p>
+            <div class="cta-actions">
+              <a href="#" class="btn btn-white btn-lg">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                Erste Folge gratis
+              </a>
+              <a href="#featured" class="btn btn-ghost-white btn-lg">Bibliothek ansehen →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="d.e.a.r_logo.png" alt="D.E.A.R. Logo" class="logo-img logo-img-sm" />
+        <p>Wissen in 5 Minuten – für alle, die mehr wollen.</p>
+        <p class="footer-small">Ein Schulprojekt von Viggo, TBZ Zürich · Modul M293</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer-Navigation">
+        <div class="footer-col">
+          <strong>Entdecken</strong>
+          <a href="#">Alle Folgen</a>
+          <a href="#">Neue Releases</a>
+          <a href="#">Top Charts</a>
+        </div>
+        <div class="footer-col">
+          <strong>Genres</strong>
+          <a href="#">Sachbuch</a>
+          <a href="#">Biografie</a>
+          <a href="#">Sci-Fi & Krimi</a>
+        </div>
+        <div class="footer-col">
+          <strong>Über uns</strong>
+          <a href="#">Das Projekt</a>
+          <a href="#">Kontakt</a>
+          <a href="#">Datenschutz</a>
+        </div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span>© 2025 D.E.A.R. – Drop Everything And Read. Alle Rechte vorbehalten.</span>
+        <span>Made with ❤️ in Zürich</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll-triggered fade-up animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Glassmorphism header on scroll
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 30);
+    });
+  </script>
 </body>
 </html>

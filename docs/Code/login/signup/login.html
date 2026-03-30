@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | D.E.A.R.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="bg-shapes">
+    <div class="blob blob-1" aria-hidden="true"></div>
+    <div class="blob blob-2" aria-hidden="true"></div>
+    <div class="blob blob-3" aria-hidden="true"></div>
+  </div>
+  <div class="hero-grid-overlay" aria-hidden="true"></div>
+
+  <header class="site-header glass">
+    <div class="header-inner container">
+      <a href="../index.html" class="logo-link">
+        <img src="../d.e.a.r_logo.png" alt="D.E.A.R. Logo" class="logo-img" />
+      </a>
+      <a href="../index.html" class="btn btn-ghost btn-sm">Zurück zur Startseite</a>
+    </div>
+  </header>
+
+  <main class="auth-page-wrapper">
+    <div class="auth-card fade-up">
+      <div class="auth-form-box">
+        <h3>Willkommen zurück 👋</h3>
+        <p>Schön, dass du wieder da bist.</p>
+        <form id="login-form">
+          <input type="email" id="log-email" placeholder="deine@email.ch" required>
+          <input type="password" id="log-password" placeholder="Passwort" required>
+          <button type="submit" class="btn btn-primary">Einloggen</button>
+        </form>
+        <p class="auth-switch">Noch keinen Account? <a href="signup.html">Jetzt erstellen</a></p>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
