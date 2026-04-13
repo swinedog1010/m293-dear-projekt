@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | D.E.A.R.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="d.e.a.r_logo.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== STICKY HEADER ===== -->
+  <header class="site-header scrolled" id="site-header">
+    <div class="header-inner container">
+      <a href="index.html" class="logo-link">
+        <img src="d.e.a.r_logo.png" alt="D.E.A.R. Logo" class="logo-img" />
+      </a>
+      <nav class="main-nav" aria-label="Hauptnavigation">
+        <a href="index.html">Home</a>
+        <a href="buecher.html">Bücher</a>
+        <a href="about.html">About</a>
+      </nav>
+      <a href="dashboard.html" class="btn btn-primary btn-sm">Dashboard</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== DASHBOARD HERO ===== -->
+    <section class="page-hero">
+      <div class="blob blob-1" aria-hidden="true"></div>
+      <div class="blob blob-2" aria-hidden="true"></div>
+      <div class="hero-grid-overlay" aria-hidden="true"></div>
+      <div class="container page-hero-content">
+        <div class="hero-badge fade-up">
+          <span class="badge-dot"></span>
+          Dein Bereich
+        </div>
+        <h1 class="fade-up delay-1">Hallo, <span class="gradient-text" id="user-name">User</span></h1>
+        <p class="page-hero-sub fade-up delay-2">Verwalte deine Merkliste und Einstellungen.</p>
+      </div>
+    </section>
+
+    <!-- ===== DASHBOARD CONTENT ===== -->
+    <section class="section-padding" style="padding-top: 40px;">
+      <div class="container">
+        <div class="dashboard-grid">
+
+          <!-- ===== MERKLISTE ===== -->
+          <div class="dash-section fade-up">
+            <div class="dash-section-header">
+              <div class="dash-section-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <h2>Meine Merkliste</h2>
+            </div>
+            <p class="dash-section-sub">Deine gespeicherten Podcasts auf einen Blick.</p>
+
+            <div id="bookmarks-list" class="bookmarks-list">
+              <!-- Wird dynamisch gefüllt -->
+            </div>
+
+            <div id="bookmarks-empty" class="dash-empty" style="display: none;">
+              <div class="dash-empty-icon">📚</div>
+              <h3>Noch keine Einträge</h3>
+              <p>Besuche die <a href="buecher.html">Bücher-Seite</a> und speichere deine Favoriten über das Lesezeichen-Icon.</p>
+            </div>
+          </div>
+
+          <!-- ===== MEINE PODCASTS ===== -->
+          <div class="dash-section fade-up delay-1">
+            <div class="dash-section-header">
+              <div class="dash-section-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+              </div>
+              <h2>Meine Podcasts</h2>
+            </div>
+            <p class="dash-section-sub">Deine erstellten Hörbücher und Podcasts.</p>
+
+            <div id="my-podcasts-list" class="bookmarks-list">
+              <!-- Dynamisch gefüllt -->
+            </div>
+
+            <div id="my-podcasts-empty" class="dash-empty" style="display: none;">
+              <div class="dash-empty-icon">🎙️</div>
+              <h3>Noch keine Podcasts erstellt</h3>
+              <p>Erstelle deinen ersten Podcast und teile ihn mit der Community.</p>
+            </div>
+
+            <div style="margin-top: 24px;">
+              <a href="create.html" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Neues Hörbuch erstellen
+              </a>
+            </div>
+          </div>
+
+          <!-- ===== EINSTELLUNGEN ===== -->
+          <div class="dash-section fade-up delay-2">
+            <div class="dash-section-header">
+              <div class="dash-section-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              </div>
+              <h2>Einstellungen</h2>
+            </div>
+            <p class="dash-section-sub">Verwalte dein Konto.</p>
+
+            <!-- Profil-Info -->
+            <div class="settings-group">
+              <div class="settings-item">
+                <div class="settings-label">Name</div>
+                <div class="settings-value" id="settings-name">–</div>
+              </div>
+              <div class="settings-item">
+                <div class="settings-label">E-Mail</div>
+                <div class="settings-value" id="settings-email">–</div>
+              </div>
+              <div class="settings-item">
+                <div class="settings-label">Passwort</div>
+                <div class="settings-value">••••••••</div>
+              </div>
+            </div>
+
+            <div class="settings-actions">
+              <button class="btn btn-ghost btn-settings" disabled>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>
+                Profil bearbeiten (bald verfügbar)
+              </button>
+              <button class="btn btn-logout" id="logout-btn" type="button">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                Ausloggen
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="d.e.a.r_logo.png" alt="D.E.A.R. Logo" class="logo-img logo-img-sm" />
+        <p>Wissen in 5 Minuten – für alle, die mehr wollen.</p>
+        <p class="footer-small">Ein Schulprojekt von Viggo, TBZ Zürich &middot; Modul M293</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer-Navigation">
+        <div class="footer-col">
+          <strong>Entdecken</strong>
+          <a href="buecher.html">Alle Folgen</a>
+          <a href="index.html">Startseite</a>
+        </div>
+        <div class="footer-col">
+          <strong>Genres</strong>
+          <a href="buecher.html">Sachbuch</a>
+          <a href="buecher.html">Biografie</a>
+          <a href="buecher.html">Krimi &amp; Fantasy</a>
+        </div>
+        <div class="footer-col">
+          <strong>Mehr</strong>
+          <a href="about.html">Das Projekt</a>
+          <a href="about.html">Kontakt</a>
+          <a href="dashboard.html">Dashboard</a>
+        </div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span>&copy; 2025 D.E.A.R. – Drop Everything And Read. Alle Rechte vorbehalten.</span>
+        <span>Made with &hearts; in Zürich</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <script>
+    // ==========================================================================
+    // STANDARD SETUP (Animations, Header)
+    // ==========================================================================
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 30);
+    });
+
+    // ==========================================================================
+    // TOAST SYSTEM (inline for dashboard)
+    // ==========================================================================
+    function showToast(message, type = 'info', duration = 3500) {
+      let container = document.getElementById('toast-container');
+      const icons = { success: '\u2713', error: '\u2717', info: '\u2139' };
+      const toast = document.createElement('div');
+      toast.className = 'toast toast-' + type;
+      toast.innerHTML =
+        '<span class="toast-icon">' + (icons[type] || icons.info) + '</span>' +
+        '<span class="toast-message">' + message + '</span>' +
+        '<button class="toast-close" aria-label="Schliessen">&times;</button>' +
+        '<div class="toast-progress" style="animation-duration:' + duration + 'ms;"></div>';
+      toast.querySelector('.toast-close').addEventListener('click', function() { dismissToast(toast); });
+      container.appendChild(toast);
+      setTimeout(function() { dismissToast(toast); }, duration);
+    }
+
+    function dismissToast(toast) {
+      if (toast.classList.contains('toast-out')) return;
+      toast.classList.add('toast-out');
+      toast.addEventListener('animationend', function() { toast.remove(); });
+    }
+
+    // ==========================================================================
+    // AUTH GUARD – redirect if not logged in
+    // ==========================================================================
+    const currentUser = JSON.parse(localStorage.getItem('dearCurrentUser') || 'null');
+
+    if (!currentUser) {
+      window.location.href = 'login/signup/login.html';
+    } else {
+      // Populate user data
+      document.getElementById('user-name').textContent = currentUser.name;
+      document.getElementById('settings-name').textContent = currentUser.name;
+      document.getElementById('settings-email').textContent = currentUser.email;
+
+      // ==========================================================================
+      // MERKLISTE
+      // ==========================================================================
+      const bookmarks = JSON.parse(localStorage.getItem('dearBookmarks') || '[]');
+      const bookmarksList = document.getElementById('bookmarks-list');
+      const bookmarksEmpty = document.getElementById('bookmarks-empty');
+
+      if (bookmarks.length === 0) {
+        bookmarksEmpty.style.display = 'block';
+      } else {
+        bookmarks.forEach(function(title) {
+          const item = document.createElement('div');
+          item.className = 'bookmark-item';
+          item.innerHTML =
+            '<div class="bookmark-icon">' +
+              '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>' +
+            '</div>' +
+            '<div class="bookmark-info">' +
+              '<strong>' + title + '</strong>' +
+              '<span>Podcast gespeichert</span>' +
+            '</div>' +
+            '<button class="bookmark-remove" data-title="' + title + '" aria-label="Entfernen">&times;</button>';
+          bookmarksList.appendChild(item);
+        });
+
+        // Remove bookmark handler
+        bookmarksList.addEventListener('click', function(e) {
+          const removeBtn = e.target.closest('.bookmark-remove');
+          if (!removeBtn) return;
+
+          const title = removeBtn.getAttribute('data-title');
+          let updated = JSON.parse(localStorage.getItem('dearBookmarks') || '[]');
+          updated = updated.filter(function(b) { return b !== title; });
+          localStorage.setItem('dearBookmarks', JSON.stringify(updated));
+
+          removeBtn.closest('.bookmark-item').remove();
+          showToast('"' + title + '" wurde entfernt.', 'info');
+
+          if (updated.length === 0) {
+            bookmarksEmpty.style.display = 'block';
+          }
+        });
+      }
+
+      // ==========================================================================
+      // MEINE PODCASTS
+      // ==========================================================================
+      const podcasts = JSON.parse(localStorage.getItem('dearPodcasts') || '[]');
+      const podcastsList = document.getElementById('my-podcasts-list');
+      const podcastsEmpty = document.getElementById('my-podcasts-empty');
+
+      // Filter: only show podcasts by this user
+      const myPodcasts = podcasts.filter(function(p) { return p.authorEmail === currentUser.email; });
+
+      if (myPodcasts.length === 0) {
+        podcastsEmpty.style.display = 'block';
+      } else {
+        myPodcasts.forEach(function(pod) {
+          var statusClass = pod.status === 'published' ? 'status-published' : 'status-draft';
+          var statusLabel = pod.status === 'published' ? 'Veröffentlicht' : 'Entwurf';
+          var item = document.createElement('div');
+          item.className = 'bookmark-item';
+          item.innerHTML =
+            '<div class="bookmark-icon" style="font-size: 1.5rem;">🎙️</div>' +
+            '<div class="bookmark-info">' +
+              '<strong>' + pod.title + '</strong>' +
+              '<span class="podcast-status ' + statusClass + '">' + statusLabel + '</span>' +
+            '</div>' +
+            '<button class="bookmark-remove" data-pod-id="' + pod.id + '" aria-label="Löschen">&times;</button>';
+          podcastsList.appendChild(item);
+        });
+
+        // Delete podcast handler
+        podcastsList.addEventListener('click', function(e) {
+          var removeBtn = e.target.closest('.bookmark-remove');
+          if (!removeBtn || !removeBtn.getAttribute('data-pod-id')) return;
+          var podId = removeBtn.getAttribute('data-pod-id');
+          var allPods = JSON.parse(localStorage.getItem('dearPodcasts') || '[]');
+          allPods = allPods.filter(function(p) { return p.id !== podId; });
+          localStorage.setItem('dearPodcasts', JSON.stringify(allPods));
+          removeBtn.closest('.bookmark-item').remove();
+          showToast('Podcast wurde gelöscht.', 'info');
+          var remaining = allPods.filter(function(p) { return p.authorEmail === currentUser.email; });
+          if (remaining.length === 0) podcastsEmpty.style.display = 'block';
+        });
+      }
+
+      // ==========================================================================
+      // LOGOUT
+      // ==========================================================================
+      document.getElementById('logout-btn').addEventListener('click', function() {
+        localStorage.removeItem('dearCurrentUser');
+        showToast('Du wurdest ausgeloggt.', 'info');
+        setTimeout(function() {
+          window.location.href = 'index.html';
+        }, 1200);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,85 +1,372 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bücher entdecken | D.E.A.R.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bücher entdecken | D.E.A.R.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="d.e.a.r_logo.png" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <header class="main-header">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <img src="d.e.a.r_logo.png" alt="D.E.A.R. Projekt Logo, TBZ">
-            </a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="buecher.html" class="active">Bücher</a></li>
-                    <li><a href="about.html">Über uns</a></li>
-                </ul>
-            </nav>
+  <!-- ===== STICKY HEADER ===== -->
+  <header class="site-header scrolled" id="site-header">
+    <div class="header-inner container">
+      <a href="index.html" class="logo-link">
+        <img src="d.e.a.r_logo.png" alt="D.E.A.R. Logo" class="logo-img" />
+      </a>
+      <nav class="main-nav" aria-label="Hauptnavigation">
+        <a href="index.html">Home</a>
+        <a href="buecher.html" class="nav-active">Bücher</a>
+        <a href="about.html">About</a>
+      </nav>
+      <a href="login/signup/login.html" class="btn btn-primary btn-sm">Anmelden</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== PAGE HERO ===== -->
+    <section class="page-hero">
+      <div class="blob blob-1" aria-hidden="true"></div>
+      <div class="blob blob-2" aria-hidden="true"></div>
+      <div class="hero-grid-overlay" aria-hidden="true"></div>
+      <div class="container page-hero-content">
+        <div class="hero-badge fade-up">
+          <span class="badge-dot"></span>
+          12 Podcasts verfügbar
         </div>
-    </header>
+        <h1 class="fade-up delay-1">Entdecke deine nächste <span class="gradient-text">Story</span></h1>
+        <p class="page-hero-sub fade-up delay-2">Filtere nach Genre und finde den passenden Podcast für dich.</p>
+      </div>
+    </section>
 
-    <main class="container">
-        <header class="page-title">
-            <h1>Entdecke deine nächste Story</h1>
-            <p>Filtere nach Genre und finde den passenden Podcast.</p>
-        </header>
+    <!-- ===== FILTER BAR ===== -->
+    <section class="filter-section section-padding" style="padding-top: 40px;">
+      <div class="container">
+        <div class="filter-bar fade-up">
+          <button class="filter-btn active" data-filter="alle">Alle</button>
+          <button class="filter-btn" data-filter="krimi">Krimi</button>
+          <button class="filter-btn" data-filter="fantasy">Fantasy</button>
+          <button class="filter-btn" data-filter="sachbuch">Sachbuch</button>
+          <button class="filter-btn" data-filter="biografie">Biografie</button>
+          <button class="filter-btn" data-filter="klassiker">Klassiker</button>
+          <button class="filter-btn" data-filter="jugendbuch">Jugendbuch</button>
+        </div>
 
-        <div class="book-grid">
-            
-            <article class="book-card">
-                <div class="card-image">Krimi</div>
-                <div class="card-content">
-                    <span class="card-category">Krimi</span>
-                    <h3>Der Schatten im Netz</h3>
-                    <p>Ein IT-Thriller über Identitätsdiebstahl.</p>
-                    <a href="detail.html" class="btn-text">Podcast hören →</a>
-                </div>
-            </article>
+        <!-- ===== BOOK GRID (12 Podcasts) ===== -->
+        <div class="book-grid" id="book-grid">
 
-            <article class="book-card">
-                <div class="card-image">Sci-Fi</div>
-                <div class="card-content">
-                    <span class="card-category">Science Fiction</span>
-                    <h3>Mars 2049</h3>
-                    <p>Die erste Kolonie steht vor einer riesigen Gefahr.</p>
-                    <a href="detail.html" class="btn-text">Podcast hören →</a>
-                </div>
-            </article>
+          <!-- 1. Krimi -->
+          <article class="book-card fade-up" data-category="krimi">
+            <div class="card-image" style="--cover-color: #1e1b4b;">
+              <span class="card-emoji">🔪</span>
+              <div class="card-badge">Krimi</div>
+            </div>
+            <div class="card-content">
+              <span class="card-category">Krimi</span>
+              <h3>Der Schatten im Netz</h3>
+              <p>Ein IT-Thriller über Identitätsdiebstahl und digitale Abgründe.</p>
+              <div class="card-footer">
+                <span class="card-duration">5:12 Min</span>
+                <a href="detail.html?id=1" class="btn-text">Podcast hören &rarr;</a>
+              </div>
+            </div>
+          </article>
 
-            <article class="book-card">
-                <div class="card-image">Fantasy</div>
-                <div class="card-content">
-                    <span class="card-category">Fantasy</span>
-                    <h3>Das Erbe der Elfen</h3>
-                    <p>Ein Klassiker neu interpretiert von Sarah.</p>
-                    <a href="detail.html" class="btn-text">Podcast hören →</a>
-                </div>
-            </article>
+          <!-- 2. Fantasy -->
+          <article class="book-card fade-up delay-1" data-category="fantasy">
+            <div class="card-image" style="--cover-color: #134e4a;">
+              <span class="card-emoji">🐉</span>
+              <div class="card-badge">Fantasy</div>
+            </div>
+            <div class="card-content">
+              <span class="card-category">Fantasy</span>
+              <h3>Das Erbe der Elfen</h3>
+              <p>Ein episches Abenteuer in einer Welt voller Magie und Intrigen.</p>
+              <div class="card-footer">
+                <span class="card-duration">4:48 Min</span>
+                <a href="detail.html?id=2" class="btn-text">Podcast hören &rarr;</a>
+              </div>
+            </div>
+          </article>
 
-            <article class="book-card">
-                <div class="card-image">Bio</div>
-                <div class="card-content">
-                    <span class="card-category">Biografie</span>
-                    <h3>Steve Jobs</h3>
-                    <p>Was wir von dem Visionär heute lernen können.</p>
-                    <a href="detail.html" class="btn-text">Podcast hören →</a>
-                </div>
-            </article>
+          <!-- 3. Sachbuch -->
+          <article class="book-card fade-up delay-2" data-category="sachbuch">
+            <div class="card-image" style="--cover-color: #0c4a6e;">
+              <span class="card-emoji">🧠</span>
+              <div class="card-badge">Sachbuch</div>
+            </div>
+            <div class="card-content">
+              <span class="card-category">Sachbuch</span>
+              <h3>Atomic Habits</h3>
+              <p>Wie kleine Gewohnheiten Grosses bewirken. Der Bestseller von James Clear.</p>
+              <div class="card-footer">
+                <span class="card-duration">4:52 Min</span>
+                <a href="detail.html?id=3" class="btn-text">Podcast hören &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Biografie -->
+          <article class="book-card fade-up" data-category="biografie">
+            <div class="card-image" style="--cover-color: #1a0a2e;">
+              <span class="card-emoji">🧬</span>
+              <div class="card-badge">Biografie</div>
+            </div>
+            <div class="card-content">
+              <span class="card-category">Biografie</span>
+              <h3>Steve Jobs</h3>
+              <p>Was wir vom Apple-Visionär heute noch lernen können.</p>
+              <div class="card-footer">
+                <span class="card-duration">5:00 Min</span>
+                <a href="detail.html?id=4" class="btn-text">Podcast hören &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Klassiker -->
+          <article class="book-card fade-up delay-1" data-category="klassiker">
+            <div class="card-image" style="--cover-color: #422006;">
+              <span class="card-emoji">📖</span>
+              <div class="card-badge">Klassiker</div>
+            </div>
+            <div class="card-content">
+              <span class="card-category">Klassiker</span>
+              <h3>Der alte Mann und das Meer</h3>
+              <p>Hemingways zeitlose Geschichte über Willenskraft und Würde.</p>
+              <div class="card-footer">
+                <span class="card-duration">4:30 Min</span>
+                <a href="detail.html?id=5" class="btn-text">Podcast hören &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. Jugendbuch -->
+          <article class="book-card fade-up delay-2" data-category="jugendbuch">
+            <div class="card-image" style="--cover-color: #581c87;">
+              <span class="card-emoji">✨</span>
+              <div class="card-badge">Jugendbuch</div>
+            </div>
+            <div class="card-content">
+              <span class="card-category">Jugendbuch</span>
+              <h3>Tschick</h3>
+              <p>Zwei Aussenseiter, ein geklautes Auto und ein Sommer voller Abenteuer.</p>
+              <div class="card-footer">
+                <span class="card-duration">4:15 Min</span>
+                <a href="detail.html?id=6" class="btn-text">Podcast hören &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7. Krimi -->
+          <article class="book-card fade-up" data-category="krimi">
+            <div class="card-image" style="--cover-color: #1c1917;">
+              <span class="card-emoji">🕵️</span>
+              <div class="card-badge">Krimi</div>
+            </div>
+            <div class="card-content">
+              <span class="card-category">Krimi</span>
+              <h3>The Girl with the Dragon Tattoo</h3>
+              <p>Journalist und Hackerin ermitteln in einem alten Vermisstenfall.</p>
+              <div class="card-footer">
+                <span class="card-duration">4:30 Min</span>
+                <a href="detail.html?id=7" class="btn-text">Podcast hören &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 8. Sachbuch -->
+          <article class="book-card fade-up delay-1" data-category="sachbuch">
+            <div class="card-image" style="--cover-color: #0f172a;">
+              <span class="card-emoji">🚀</span>
+              <div class="card-badge">Sachbuch</div>
+            </div>
+            <div class="card-content">
+              <span class="card-category">Sachbuch</span>
+              <h3>The Lean Startup</h3>
+              <p>Wie man mit weniger Ressourcen ein erfolgreiches Unternehmen gründet.</p>
+              <div class="card-footer">
+                <span class="card-duration">4:55 Min</span>
+                <a href="detail.html?id=8" class="btn-text">Podcast hören &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 9. Fantasy -->
+          <article class="book-card fade-up delay-2" data-category="fantasy">
+            <div class="card-image" style="--cover-color: #3b0764;">
+              <span class="card-emoji">🧙</span>
+              <div class="card-badge">Fantasy</div>
+            </div>
+            <div class="card-content">
+              <span class="card-category">Fantasy</span>
+              <h3>Dune – Der Wüstenplanet</h3>
+              <p>Macht, Prophecy und Spice: Frank Herberts Sci-Fi-Fantasy-Meisterwerk.</p>
+              <div class="card-footer">
+                <span class="card-duration">5:00 Min</span>
+                <a href="detail.html?id=9" class="btn-text">Podcast hören &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 10. Biografie -->
+          <article class="book-card fade-up" data-category="biografie">
+            <div class="card-image" style="--cover-color: #172554;">
+              <span class="card-emoji">⚡</span>
+              <div class="card-badge">Biografie</div>
+            </div>
+            <div class="card-content">
+              <span class="card-category">Biografie</span>
+              <h3>Elon Musk – Die Biografie</h3>
+              <p>Walter Isaacsons Porträt über einen der umstrittensten Unternehmer.</p>
+              <div class="card-footer">
+                <span class="card-duration">4:45 Min</span>
+                <a href="detail.html?id=10" class="btn-text">Podcast hören &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 11. Klassiker -->
+          <article class="book-card fade-up delay-1" data-category="klassiker">
+            <div class="card-image" style="--cover-color: #1e3a5f;">
+              <span class="card-emoji">🌊</span>
+              <div class="card-badge">Klassiker</div>
+            </div>
+            <div class="card-content">
+              <span class="card-category">Klassiker</span>
+              <h3>1984</h3>
+              <p>George Orwells Dystopie über Überwachung, Manipulation und Freiheit.</p>
+              <div class="card-footer">
+                <span class="card-duration">4:40 Min</span>
+                <a href="detail.html?id=11" class="btn-text">Podcast hören &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 12. Jugendbuch -->
+          <article class="book-card fade-up delay-2" data-category="jugendbuch">
+            <div class="card-image" style="--cover-color: #7c2d12;">
+              <span class="card-emoji">🏕️</span>
+              <div class="card-badge">Jugendbuch</div>
+            </div>
+            <div class="card-content">
+              <span class="card-category">Jugendbuch</span>
+              <h3>Die Tribute von Panem</h3>
+              <p>In einer dystopischen Zukunft kämpft Katniss Everdeen ums Überleben.</p>
+              <div class="card-footer">
+                <span class="card-duration">4:58 Min</span>
+                <a href="detail.html?id=12" class="btn-text">Podcast hören &rarr;</a>
+              </div>
+            </div>
+          </article>
 
         </div>
-    </main>
 
-    <footer class="main-footer">
-        <div class="container">
-            <p>&copy; 2026 D.E.A.R. Projekt | Ein Startup-Konzept von Viggo</p>
+        <!-- No results message -->
+        <div class="no-results" id="no-results" style="display: none;">
+          <p>Keine Podcasts in dieser Kategorie gefunden.</p>
         </div>
-    </footer>
+      </div>
+    </section>
+  </main>
 
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="d.e.a.r_logo.png" alt="D.E.A.R. Logo" class="logo-img logo-img-sm" />
+        <p>Wissen in 5 Minuten – für alle, die mehr wollen.</p>
+        <p class="footer-small">Ein Schulprojekt von Viggo, TBZ Zürich &middot; Modul M293</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer-Navigation">
+        <div class="footer-col">
+          <strong>Entdecken</strong>
+          <a href="buecher.html">Alle Folgen</a>
+          <a href="index.html">Startseite</a>
+        </div>
+        <div class="footer-col">
+          <strong>Genres</strong>
+          <a href="buecher.html">Sachbuch</a>
+          <a href="buecher.html">Biografie</a>
+          <a href="buecher.html">Krimi &amp; Fantasy</a>
+        </div>
+        <div class="footer-col">
+          <strong>Mehr</strong>
+          <a href="about.html">Das Projekt</a>
+          <a href="about.html">Kontakt</a>
+          <a href="login/signup/login.html">Anmelden</a>
+        </div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span>&copy; 2025 D.E.A.R. – Drop Everything And Read. Alle Rechte vorbehalten.</span>
+        <span>Made with &hearts; in Zürich</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <script>
+    // Scroll-triggered fade-up animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Glassmorphism header on scroll
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 30);
+    });
+
+    // ===== CATEGORY FILTER =====
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const bookCards = document.querySelectorAll('.book-card');
+    const noResults = document.getElementById('no-results');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active button
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+        let visibleCount = 0;
+
+        bookCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'alle' || category === filter) {
+            card.style.display = '';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+      });
+    });
+
+    // Auth-aware header button
+    (function() {
+      const user = JSON.parse(localStorage.getItem('dearCurrentUser') || 'null');
+      const authBtn = document.querySelector('.header-inner .btn-primary');
+      if (user && authBtn) {
+        authBtn.textContent = 'Dashboard';
+        authBtn.href = 'dashboard.html';
+      }
+    })();
+  </script>
 </body>
 </html>

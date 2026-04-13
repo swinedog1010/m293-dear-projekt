@@ -1,75 +1,257 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Über D.E.A.R. | Das Projekt</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Über D.E.A.R. | Das Projekt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="d.e.a.r_logo.png" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <header class="main-header">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <img src="d.e.a.r_logo.png" alt="D.E.A.R. Projekt Logo, TBZ">
-            </a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="buecher.html">Bücher</a></li>
-                    <li><a href="about.html" class="active">Über uns</a></li>
-                </ul>
-            </nav>
+  <!-- ===== STICKY HEADER ===== -->
+  <header class="site-header scrolled" id="site-header">
+    <div class="header-inner container">
+      <a href="index.html" class="logo-link">
+        <img src="d.e.a.r_logo.png" alt="D.E.A.R. Logo" class="logo-img" />
+      </a>
+      <nav class="main-nav" aria-label="Hauptnavigation">
+        <a href="index.html">Home</a>
+        <a href="buecher.html">Bücher</a>
+        <a href="about.html" class="nav-active">About</a>
+      </nav>
+      <a href="login/signup/login.html" class="btn btn-primary btn-sm">Anmelden</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== PAGE HERO ===== -->
+    <section class="page-hero">
+      <div class="blob blob-1" aria-hidden="true"></div>
+      <div class="blob blob-2" aria-hidden="true"></div>
+      <div class="hero-grid-overlay" aria-hidden="true"></div>
+      <div class="container page-hero-content">
+        <div class="hero-badge fade-up">
+          <span class="badge-dot"></span>
+          Über das Projekt
         </div>
-    </header>
+        <h1 class="fade-up delay-1">Lesen <span class="gradient-text">hörbar</span> machen</h1>
+        <p class="page-hero-sub fade-up delay-2">D.E.A.R. ist ein Schulprojekt von Lernenden für Lernende am TBZ Zürich.</p>
+      </div>
+    </section>
 
-    <main class="container">
-        <section class="about-content">
-            <h1>Unsere Mission: Lesen hörbar machen</h1>
-            <p class="lead">D.E.A.R. (Drop Everything And Read) ist ein Startup-Projekt von Lernenden für Lernende. Wir glauben, dass jedes Buch eine Chance verdient – auch wenn die Zeit im Alltag knapp ist.</p>
-            
-            <div class="mission-grid">
-                <div class="mission-item">
-                    <h3>Die Idee</h3>
-                    <p>Wir fassen die Kernthemen spannender Bücher in 5-minütigen Podcasts zusammen, damit du sofort weisst, ob sich das Lesen für dich lohnt.</p>
-                </div>
-                <div class="mission-item">
-                    <h3>Für wen?</h3>
-                    <p>Primär für Auszubildende und Schüler, die ihr Wissen erweitern wollen, ohne Stunden in der Bibliothek zu verbringen.</p>
-                </div>
-            </div>
-        </section>
+    <!-- ===== VISION SECTION ===== -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="about-vision-grid">
+          <!-- Was ist D.E.A.R.? -->
+          <div class="vision-card fade-up">
+            <div class="vision-icon">📖</div>
+            <h3>Was ist D.E.A.R.?</h3>
+            <p>
+              D.E.A.R. steht für <strong>"Drop Everything And Read"</strong> – lass alles stehen und lies.
+              Das Projekt entstand im Rahmen des Moduls M293 an der Technischen Berufsschule Zürich (TBZ).
+              Ziel ist es, Buchvorstellungen als Podcasts zugänglich zu machen, damit Lernende und
+              Auszubildende auf einfache Weise neue Bücher entdecken können.
+            </p>
+          </div>
 
-        <section class="contact-section">
-            <div class="contact-card">
-                <h2>Schreib uns eine Nachricht</h2>
-                <p>Hast du einen Buchvorschlag oder möchtest selbst einen Podcast aufnehmen?</p>
-                
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Dein Name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">E-Mail</label>
-                        <input type="email" id="email" name="email" placeholder="deine@mail.ch" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Nachricht</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Was brennt dir auf der Seele?" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Nachricht senden</button>
-                </form>
-            </div>
-        </section>
-    </main>
+          <!-- Die Vision -->
+          <div class="vision-card fade-up delay-1">
+            <div class="vision-icon">🎯</div>
+            <h3>Unsere Vision</h3>
+            <p>
+              Wir glauben, dass jedes Buch eine Chance verdient – auch wenn die Zeit im Alltag knapp ist.
+              In nur 5 Minuten erhältst du die wichtigsten Erkenntnisse und Kernthesen eines Buches,
+              präsentiert von echten Lernenden. So kannst du entscheiden, ob sich das Lesen für dich lohnt.
+            </p>
+          </div>
 
-    <footer class="main-footer">
-        <div class="container">
-            <p>&copy; 2026 D.E.A.R. Projekt | Ein Startup-Konzept von Viggo</p>
+          <!-- Wie funktioniert's? -->
+          <div class="vision-card fade-up delay-2">
+            <div class="vision-icon">🎙️</div>
+            <h3>Wie funktioniert's?</h3>
+            <p>
+              Lernende im ABU-Unterricht (Allgemeinbildender Unterricht) produzieren Buchvorstellungen
+              als Podcasts. Diese werden auf der D.E.A.R.-Plattform veröffentlicht, mit Cover, Beschreibung,
+              Audio-Player und der Angabe der vorstellenden Person.
+            </p>
+          </div>
+
+          <!-- Für wen? -->
+          <div class="vision-card fade-up delay-3">
+            <div class="vision-icon">👥</div>
+            <h3>Für wen?</h3>
+            <p>
+              Primär für Auszubildende und Schüler:innen, die ihr Wissen erweitern wollen,
+              ohne Stunden in der Bibliothek zu verbringen. Aber auch für alle, die Inspiration
+              für ihr nächstes Buch suchen – schnell, unkompliziert und kostenlos.
+            </p>
+          </div>
         </div>
-    </footer>
 
+        <!-- Projekt-Facts -->
+        <div class="about-facts fade-up">
+          <div class="fact-item">
+            <span class="fact-num">12+</span>
+            <span class="fact-label">Podcasts</span>
+          </div>
+          <div class="fact-divider"></div>
+          <div class="fact-item">
+            <span class="fact-num">6</span>
+            <span class="fact-label">Kategorien</span>
+          </div>
+          <div class="fact-divider"></div>
+          <div class="fact-item">
+            <span class="fact-num">5 Min</span>
+            <span class="fact-label">pro Folge</span>
+          </div>
+          <div class="fact-divider"></div>
+          <div class="fact-item">
+            <span class="fact-num">100%</span>
+            <span class="fact-label">kostenlos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== KONTAKTFORMULAR ===== -->
+    <section class="contact-section section-padding" id="kontakt">
+      <div class="container">
+        <div class="section-label fade-up">Kontakt</div>
+        <h2 class="section-title fade-up delay-1">Schreib uns eine Nachricht</h2>
+        <p class="section-sub fade-up delay-2">
+          Hast du einen Buchvorschlag, eine Frage oder möchtest du selbst einen Podcast aufnehmen? Wir freuen uns auf deine Nachricht.
+        </p>
+
+        <div class="contact-card fade-up delay-2">
+          <form class="contact-form" id="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Dein Name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="email" placeholder="deine@mail.ch" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Betreff</label>
+              <select id="subject" name="subject" required>
+                <option value="" disabled selected>Bitte wähle einen Betreff...</option>
+                <option value="frage">Frage zum Projekt</option>
+                <option value="buchvorschlag">Buchvorschlag einreichen</option>
+                <option value="podcast">Selbst einen Podcast aufnehmen</option>
+                <option value="support">Technischer Support</option>
+                <option value="feedback">Feedback &amp; Lob</option>
+                <option value="sonstiges">Sonstiges</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Nachricht</label>
+              <textarea id="message" name="message" rows="5" placeholder="Was brennt dir auf der Seele?" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Nachricht senden
+            </button>
+          </form>
+
+          <!-- Success Message -->
+          <div class="form-success" id="form-success" style="display: none;">
+            <div class="success-icon">✅</div>
+            <h3>Nachricht gesendet!</h3>
+            <p>Vielen Dank für deine Nachricht. Wir melden uns so schnell wie möglich bei dir.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="d.e.a.r_logo.png" alt="D.E.A.R. Logo" class="logo-img logo-img-sm" />
+        <p>Wissen in 5 Minuten – für alle, die mehr wollen.</p>
+        <p class="footer-small">Ein Schulprojekt von Viggo, TBZ Zürich &middot; Modul M293</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer-Navigation">
+        <div class="footer-col">
+          <strong>Entdecken</strong>
+          <a href="buecher.html">Alle Folgen</a>
+          <a href="index.html">Startseite</a>
+        </div>
+        <div class="footer-col">
+          <strong>Genres</strong>
+          <a href="buecher.html">Sachbuch</a>
+          <a href="buecher.html">Biografie</a>
+          <a href="buecher.html">Krimi &amp; Fantasy</a>
+        </div>
+        <div class="footer-col">
+          <strong>Mehr</strong>
+          <a href="about.html">Das Projekt</a>
+          <a href="#kontakt">Kontakt</a>
+          <a href="login/signup/login.html">Anmelden</a>
+        </div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span>&copy; 2025 D.E.A.R. – Drop Everything And Read. Alle Rechte vorbehalten.</span>
+        <span>Made with &hearts; in Zürich</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <script>
+    // Scroll-triggered fade-up animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Glassmorphism header on scroll
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 30);
+    });
+
+    // ===== CONTACT FORM HANDLING =====
+    const contactForm = document.getElementById('contact-form');
+    const formSuccess = document.getElementById('form-success');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // Hide form, show success
+      contactForm.style.display = 'none';
+      formSuccess.style.display = 'block';
+    });
+
+    // Auth-aware header button
+    (function() {
+      const user = JSON.parse(localStorage.getItem('dearCurrentUser') || 'null');
+      const authBtn = document.querySelector('.header-inner .btn-primary');
+      if (user && authBtn) {
+        authBtn.textContent = 'Dashboard';
+        authBtn.href = 'dashboard.html';
+      }
+    })();
+  </script>
 </body>
 </html>

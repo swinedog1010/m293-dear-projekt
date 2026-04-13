@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Podcast erstellen | D.E.A.R.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="d.e.a.r_logo.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== STICKY HEADER ===== -->
+  <header class="site-header scrolled" id="site-header">
+    <div class="header-inner container">
+      <a href="index.html" class="logo-link">
+        <img src="d.e.a.r_logo.png" alt="D.E.A.R. Logo" class="logo-img" />
+      </a>
+      <nav class="main-nav" aria-label="Hauptnavigation">
+        <a href="index.html">Home</a>
+        <a href="buecher.html">Bücher</a>
+        <a href="about.html">About</a>
+      </nav>
+      <a href="dashboard.html" class="btn btn-primary btn-sm">Dashboard</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== PAGE HERO ===== -->
+    <section class="page-hero">
+      <div class="blob blob-1" aria-hidden="true"></div>
+      <div class="blob blob-2" aria-hidden="true"></div>
+      <div class="hero-grid-overlay" aria-hidden="true"></div>
+      <div class="container page-hero-content">
+        <div class="hero-badge fade-up">
+          <span class="badge-dot"></span>
+          Creator Studio
+        </div>
+        <h1 class="fade-up delay-1">Neues <span class="gradient-text">Hörbuch</span> erstellen</h1>
+        <p class="page-hero-sub fade-up delay-2">Fülle das Formular aus und teile dein Buch mit der D.E.A.R.-Community.</p>
+      </div>
+    </section>
+
+    <!-- ===== CREATE FORM ===== -->
+    <section class="section-padding" style="padding-top: 40px;">
+      <div class="container">
+        <div class="create-card fade-up">
+
+          <form id="create-form">
+            <!-- Titel -->
+            <div class="form-group">
+              <label for="pod-title">Titel des Buches / Podcasts</label>
+              <input type="text" id="pod-title" name="title" placeholder="z.B. Atomic Habits" required />
+            </div>
+
+            <!-- Kategorie -->
+            <div class="form-group">
+              <label for="pod-category">Kategorie</label>
+              <select id="pod-category" name="category" required>
+                <option value="" disabled selected>Kategorie wählen...</option>
+                <option value="Krimi">Krimi</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Sachbuch">Sachbuch</option>
+                <option value="Biografie">Biografie</option>
+                <option value="Klassiker">Klassiker</option>
+                <option value="Jugendbuch">Jugendbuch</option>
+              </select>
+            </div>
+
+            <!-- Beschreibung -->
+            <div class="form-group">
+              <label for="pod-desc">Beschreibung</label>
+              <textarea id="pod-desc" name="description" rows="4" placeholder="Worum geht es in diesem Buch? Warum sollte man es hören?" required></textarea>
+            </div>
+
+            <!-- Cover-Bild Upload -->
+            <div class="form-group">
+              <label for="pod-cover">Cover-Bild (JPG/PNG, max. 500 KB)</label>
+              <div class="file-upload-area" id="cover-upload-area">
+                <input type="file" id="pod-cover" name="cover" accept="image/jpeg,image/png" />
+                <div class="file-upload-content" id="cover-preview">
+                  <div class="file-upload-icon">🖼️</div>
+                  <p>Bild hierher ziehen oder <strong>klicken</strong></p>
+                  <span class="file-upload-hint">JPG oder PNG, max. 500 KB</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Audio Upload -->
+            <div class="form-group">
+              <label for="pod-audio">Podcast-Audio (MP3, max. 2 MB)</label>
+              <div class="file-upload-area" id="audio-upload-area">
+                <input type="file" id="pod-audio" name="audio" accept="audio/mpeg,audio/mp3" />
+                <div class="file-upload-content" id="audio-preview">
+                  <div class="file-upload-icon">🎵</div>
+                  <p>MP3-Datei hierher ziehen oder <strong>klicken</strong></p>
+                  <span class="file-upload-hint">MP3, max. 2 MB</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="create-actions">
+              <button type="button" class="btn btn-ghost btn-lg btn-create-draft" id="save-draft">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+                Als Entwurf speichern
+              </button>
+              <button type="submit" class="btn btn-primary btn-lg btn-create-publish">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+                Veröffentlichen
+              </button>
+            </div>
+          </form>
+
+        </div>
+
+        <a href="dashboard.html" class="back-link" style="margin-top: 24px; display: inline-block;">&larr; Zurück zum Dashboard</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="d.e.a.r_logo.png" alt="D.E.A.R. Logo" class="logo-img logo-img-sm" />
+        <p>Wissen in 5 Minuten – für alle, die mehr wollen.</p>
+        <p class="footer-small">Ein Schulprojekt von Viggo, TBZ Zürich &middot; Modul M293</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer-Navigation">
+        <div class="footer-col">
+          <strong>Entdecken</strong>
+          <a href="buecher.html">Alle Folgen</a>
+          <a href="index.html">Startseite</a>
+        </div>
+        <div class="footer-col">
+          <strong>Genres</strong>
+          <a href="buecher.html">Sachbuch</a>
+          <a href="buecher.html">Biografie</a>
+          <a href="buecher.html">Krimi &amp; Fantasy</a>
+        </div>
+        <div class="footer-col">
+          <strong>Mehr</strong>
+          <a href="about.html">Das Projekt</a>
+          <a href="about.html">Kontakt</a>
+          <a href="dashboard.html">Dashboard</a>
+        </div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span>&copy; 2025 D.E.A.R. – Drop Everything And Read. Alle Rechte vorbehalten.</span>
+        <span>Made with &hearts; in Zürich</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <script>
+    // ==========================================================================
+    // STANDARD SETUP
+    // ==========================================================================
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 30);
+    });
+
+    // ==========================================================================
+    // TOAST SYSTEM
+    // ==========================================================================
+    function showToast(message, type, duration) {
+      type = type || 'info'; duration = duration || 3500;
+      var container = document.getElementById('toast-container');
+      var icons = { success: '\u2713', error: '\u2717', info: '\u2139' };
+      var toast = document.createElement('div');
+      toast.className = 'toast toast-' + type;
+      toast.innerHTML = '<span class="toast-icon">' + (icons[type] || icons.info) + '</span><span class="toast-message">' + message + '</span><button class="toast-close" aria-label="Schliessen">&times;</button><div class="toast-progress" style="animation-duration:' + duration + 'ms;"></div>';
+      toast.querySelector('.toast-close').addEventListener('click', function() { dismissToast(toast); });
+      container.appendChild(toast);
+      setTimeout(function() { dismissToast(toast); }, duration);
+    }
+    function dismissToast(toast) {
+      if (toast.classList.contains('toast-out')) return;
+      toast.classList.add('toast-out');
+      toast.addEventListener('animationend', function() { toast.remove(); });
+    }
+
+    // ==========================================================================
+    // AUTH GUARD
+    // ==========================================================================
+    var currentUser = JSON.parse(localStorage.getItem('dearCurrentUser') || 'null');
+    if (!currentUser) {
+      window.location.href = 'login/signup/login.html';
+    }
+
+    // ==========================================================================
+    // FILE UPLOAD PREVIEWS
+    // ==========================================================================
+    var coverInput = document.getElementById('pod-cover');
+    var audioInput = document.getElementById('pod-audio');
+    var coverPreview = document.getElementById('cover-preview');
+    var audioPreview = document.getElementById('audio-preview');
+    var coverData = null;
+    var audioData = null;
+
+    // Size limits (to avoid localStorage overflow)
+    var COVER_MAX = 500 * 1024;  // 500 KB
+    var AUDIO_MAX = 2 * 1024 * 1024; // 2 MB
+
+    coverInput.addEventListener('change', function() {
+      var file = this.files[0];
+      if (!file) return;
+      if (file.size > COVER_MAX) {
+        showToast('Das Cover ist zu gross (max. 500 KB). Bitte wähle ein kleineres Bild.', 'error');
+        this.value = '';
+        return;
+      }
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        coverData = e.target.result;
+        coverPreview.innerHTML = '<img src="' + coverData + '" alt="Cover-Vorschau" style="max-height:160px;border-radius:12px;margin-bottom:8px;" /><p style="margin:0;font-size:0.85rem;color:var(--text-muted);">' + file.name + '</p>';
+      };
+      reader.readAsDataURL(file);
+    });
+
+    audioInput.addEventListener('change', function() {
+      var file = this.files[0];
+      if (!file) return;
+      if (file.size > AUDIO_MAX) {
+        showToast('Die Audio-Datei ist zu gross (max. 2 MB). Bitte komprimiere sie.', 'error');
+        this.value = '';
+        return;
+      }
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        audioData = e.target.result;
+        audioPreview.innerHTML = '<div class="file-upload-icon">✅</div><p style="margin:0;font-weight:600;">' + file.name + '</p><audio controls style="width:100%;margin-top:12px;"><source src="' + audioData + '" type="audio/mpeg" /></audio>';
+      };
+      reader.readAsDataURL(file);
+    });
+
+    // ==========================================================================
+    // SAVE / PUBLISH LOGIC
+    // ==========================================================================
+    function savePodcast(status) {
+      var title = document.getElementById('pod-title').value.trim();
+      var category = document.getElementById('pod-category').value;
+      var description = document.getElementById('pod-desc').value.trim();
+
+      if (!title) {
+        showToast('Bitte gib einen Titel ein.', 'error');
+        return false;
+      }
+      if (!category) {
+        showToast('Bitte wähle eine Kategorie.', 'error');
+        return false;
+      }
+      if (!description) {
+        showToast('Bitte gib eine Beschreibung ein.', 'error');
+        return false;
+      }
+
+      var podcast = {
+        id: 'pod_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5),
+        title: title,
+        category: category,
+        description: description,
+        coverUrl: coverData || null,
+        audioUrl: audioData || null,
+        status: status,
+        authorName: currentUser.name,
+        authorEmail: currentUser.email,
+        createdAt: new Date().toISOString()
+      };
+
+      // Try to save, handle quota errors gracefully
+      try {
+        var podcasts = JSON.parse(localStorage.getItem('dearPodcasts') || '[]');
+        podcasts.push(podcast);
+        localStorage.setItem('dearPodcasts', JSON.stringify(podcasts));
+      } catch (e) {
+        // If quota exceeded, save without media files
+        podcast.coverUrl = null;
+        podcast.audioUrl = null;
+        var podcasts = JSON.parse(localStorage.getItem('dearPodcasts') || '[]');
+        podcasts.push(podcast);
+        try {
+          localStorage.setItem('dearPodcasts', JSON.stringify(podcasts));
+          showToast('Gespeichert, aber ohne Medien (Speicher voll).', 'info');
+        } catch (e2) {
+          showToast('Speicher voll! Bitte lösche alte Einträge.', 'error');
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+    // Draft button
+    document.getElementById('save-draft').addEventListener('click', function() {
+      if (savePodcast('draft')) {
+        showToast('Entwurf wurde gespeichert!', 'success');
+        setTimeout(function() { window.location.href = 'dashboard.html'; }, 1200);
+      }
+    });
+
+    // Publish button (form submit)
+    document.getElementById('create-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (savePodcast('published')) {
+        showToast('Podcast wurde veröffentlicht!', 'success');
+        setTimeout(function() { window.location.href = 'dashboard.html'; }, 1200);
+      }
+    });
+  </script>
+</body>
+</html>
