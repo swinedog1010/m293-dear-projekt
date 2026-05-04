@@ -313,6 +313,71 @@
   <div id="toast-container" class="toast-container"></div>
 
   <script>
+    // ===== DYNAMISCHE BÜCHER AUS LOCALSTORAGE =====
+    // Muss VOR der Filter-Initialisierung laufen, damit querySelectorAll('.book-card')
+    // die neuen Karten mit erfasst.
+    (function renderUserPodcasts() {
+      var grid = document.getElementById('book-grid');
+      if (!grid) return;
+      var podcasts;
+      try {
+        podcasts = JSON.parse(localStorage.getItem('dearPodcasts') || '[]');
+      } catch (e) { podcasts = []; }
+
+      var categoryDefaults = {
+        krimi:      { color: '#1e1b4b', emoji: '🔪' },
+        fantasy:    { color: '#134e4a', emoji: '🐉' },
+        sachbuch:   { color: '#0c4a6e', emoji: '🧠' },
+        biografie:  { color: '#1a0a2e', emoji: '🧬' },
+        klassiker:  { color: '#422006', emoji: '📖' },
+        jugendbuch: { color: '#581c87', emoji: '✨' }
+      };
+
+      function escapeHtml(str) {
+        return String(str == null ? '' : str)
+          .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+      }
+
+      podcasts
+        .filter(function(p) { return p && p.status === 'published'; })
+        .forEach(function(pod, i) {
+          var catKey = (pod.category || '').toLowerCase();
+          var def = categoryDefaults[catKey] || { color: '#1e1b4b', emoji: '🎙️' };
+
+          var article = document.createElement('article');
+          article.className = 'book-card fade-up' + (i % 3 === 1 ? ' delay-1' : i % 3 === 2 ? ' delay-2' : '');
+          article.setAttribute('data-category', catKey);
+
+          var imageStyle = 'style="--cover-color: ' + def.color + ';';
+          var emojiHtml = '<span class="card-emoji">' + def.emoji + '</span>';
+          if (pod.coverUrl) {
+            imageStyle += ' background-image: url(\'' + pod.coverUrl.replace(/'/g, "\\'") + '\'); background-size: cover; background-position: center;';
+            emojiHtml = '';
+          }
+          imageStyle += '"';
+
+          var authorLine = pod.authorName ? 'von ' + escapeHtml(pod.authorName) : 'Community-Beitrag';
+
+          article.innerHTML =
+            '<div class="card-image" ' + imageStyle + '>' +
+              emojiHtml +
+              '<div class="card-badge">' + escapeHtml(pod.category || 'Hörbuch') + '</div>' +
+            '</div>' +
+            '<div class="card-content">' +
+              '<span class="card-category">' + escapeHtml(pod.category || '') + '</span>' +
+              '<h3>' + escapeHtml(pod.title || 'Ohne Titel') + '</h3>' +
+              '<p>' + escapeHtml(pod.description || '') + '</p>' +
+              '<div class="card-footer">' +
+                '<span class="card-duration">' + authorLine + '</span>' +
+                '<a href="detail.html?id=' + encodeURIComponent(pod.id) + '" class="btn-text">Podcast hören &rarr;</a>' +
+              '</div>' +
+            '</div>';
+
+          grid.appendChild(article);
+        });
+    })();
+
     // Scroll-triggered fade-up animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
