@@ -255,9 +255,23 @@
         descSection.appendChild(p);
       }
 
-      // Presenter-Sektion: für User-Bücher ausblenden (kein "Vorgestellt von")
-      var presenter = document.querySelector('.presenter-section');
-      if (presenter) presenter.style.display = 'none';
+      // Presenter-Sektion: für User-Bücher mit Foto + Autor füllen
+      var presenter = document.querySelector('.presenter-section .presenter-card');
+      if (presenter) {
+        var initials = (pod.authorName || '?').trim().split(/\s+/)
+          .map(function(w) { return w.charAt(0).toUpperCase(); }).join('').slice(0, 2);
+        presenter.innerHTML =
+          '<div class="presenter-avatar" style="background:transparent;padding:0;overflow:hidden;">' +
+            '<img src="presenter.jpg" alt="Foto von ' + (pod.authorName || 'Autor') + '" ' +
+                 'style="width:100%;height:100%;object-fit:cover;border-radius:50%;" ' +
+                 'onerror="this.parentNode.innerHTML=\'' + initials.replace(/'/g, "\\'") + '\';this.parentNode.style.background=\'var(--primary)\';this.parentNode.style.color=\'white\';this.parentNode.style.fontWeight=\'700\';" />' +
+          '</div>' +
+          '<div class="presenter-info">' +
+            '<h3>Vorgestellt von</h3>' +
+            '<strong>' + (pod.authorName || 'Unbekannt') + '</strong>' +
+            '<p>D.E.A.R.-Community</p>' +
+          '</div>';
+      }
     })();
 
     // Scroll-triggered fade-up animations
