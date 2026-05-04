@@ -155,6 +155,98 @@
   </footer>
 
   <script>
+    // ===== DYNAMISCHES BUCH AUS LOCALSTORAGE LADEN =====
+    // Muss VOR dem Merkliste-Code laufen, der den Titel aus dem DOM liest.
+    (function loadDynamicPodcast() {
+      var params = new URLSearchParams(window.location.search);
+      var id = params.get('id');
+      if (!id || id.indexOf('pod_') !== 0) return; // statische IDs (1-12) unverändert lassen
+
+      var podcasts;
+      try {
+        podcasts = JSON.parse(localStorage.getItem('dearPodcasts') || '[]');
+      } catch (e) { podcasts = []; }
+
+      var pod = podcasts.find(function(p) { return p && p.id === id; });
+      if (!pod) {
+        var info = document.querySelector('.book-info');
+        if (info) {
+          info.innerHTML = '<h1>Buch nicht gefunden</h1>' +
+            '<p class="author">Dieses Hörbuch existiert nicht (mehr).</p>' +
+            '<a href="buecher.html" class="btn btn-primary" style="margin-top:16px;">Zur Übersicht</a>';
+        }
+        return;
+      }
+
+      function setText(selector, value) {
+        var el = document.querySelector(selector);
+        if (el) el.textContent = value;
+      }
+
+      // Titel, Kategorie-Badge, Autor
+      setText('.book-info .badge', pod.category || 'Hörbuch');
+      setText('.book-info h1', pod.title || 'Ohne Titel');
+      setText('.book-info .author', 'von ' + (pod.authorName || 'Unbekannt'));
+      document.title = (pod.title || 'Hörbuch') + ' | D.E.A.R.';
+
+      // Meta-Grid: Dauer (Platzhalter, später aus Audio), Kategorie, Erschienen
+      var metaValues = document.querySelectorAll('.book-meta-grid .meta-value');
+      if (metaValues.length >= 3) {
+        metaValues[0].textContent = '— Min';
+        metaValues[1].textContent = pod.category || '—';
+        var year = pod.createdAt ? new Date(pod.createdAt).getFullYear() : new Date().getFullYear();
+        metaValues[2].textContent = String(year);
+      }
+
+      // Cover-Bild (falls hochgeladen)
+      if (pod.coverUrl) {
+        var coverEl = document.querySelector('.book-cover-placeholder');
+        if (coverEl) {
+          coverEl.innerHTML = '';
+          coverEl.style.backgroundImage = "url('" + pod.coverUrl.replace(/'/g, "\\'") + "')";
+          coverEl.style.backgroundSize = 'cover';
+          coverEl.style.backgroundPosition = 'center';
+          coverEl.style.border = 'none';
+        }
+      }
+
+      // Audio-Source
+      var audioEl = document.querySelector('.audio-container audio');
+      if (audioEl) {
+        if (pod.audioUrl) {
+          audioEl.innerHTML = '<source src="' + pod.audioUrl + '" type="audio/mpeg" />Dein Browser unterstützt das Audio-Element nicht.';
+          audioEl.load();
+          audioEl.addEventListener('loadedmetadata', function() {
+            if (!isFinite(audioEl.duration)) return;
+            var total = Math.round(audioEl.duration);
+            var m = Math.floor(total / 60);
+            var s = total % 60;
+            var formatted = m + ':' + (s < 10 ? '0' + s : s) + ' Min';
+            if (metaValues.length >= 1) metaValues[0].textContent = formatted;
+          });
+        } else {
+          // Kein Audio hochgeladen → Container ausblenden
+          var audioWrapper = document.querySelector('.audio-container');
+          if (audioWrapper) audioWrapper.style.display = 'none';
+        }
+      }
+
+      // Beschreibung ("Darum geht's")
+      var descSection = document.querySelector('.book-description');
+      if (descSection) {
+        var heading = descSection.querySelector('h2');
+        descSection.innerHTML = '';
+        if (heading) descSection.appendChild(heading);
+        var p = document.createElement('p');
+        p.textContent = pod.description || 'Keine Beschreibung vorhanden.';
+        descSection.appendChild(p);
+      }
+
+      // Presenter-Sektion: für User-Bücher ausblenden (kein "Vorgestellt von")
+      var presenter = document.querySelector('.presenter-section');
+      if (presenter) presenter.style.display = 'none';
+    })();
+
     // Scroll-triggered fade-up animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
