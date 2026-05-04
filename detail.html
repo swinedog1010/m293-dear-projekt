@@ -160,14 +160,27 @@
     (function loadDynamicPodcast() {
       var params = new URLSearchParams(window.location.search);
       var id = params.get('id');
-      if (!id || id.indexOf('pod_') !== 0) return; // statische IDs (1-12) unverändert lassen
+
+      // --- DIAGNOSE (kann später entfernt werden) ---
+      console.info('[detail.html] URL-id:', id);
+      // ---------------------------------------------
+
+      if (!id || id.indexOf('pod_') !== 0) {
+        console.info('[detail.html] keine pod_-id → statischer Inhalt bleibt.');
+        return;
+      }
 
       var podcasts;
       try {
         podcasts = JSON.parse(localStorage.getItem('dearPodcasts') || '[]');
       } catch (e) { podcasts = []; }
 
+      // --- DIAGNOSE ---
+      console.info('[detail.html] dearPodcasts vorhanden:', podcasts.length, 'IDs:', podcasts.map(function(p){return p && p.id;}));
+      // ----------------
+
       var pod = podcasts.find(function(p) { return p && p.id === id; });
+      console.info('[detail.html] Treffer:', pod);
       if (!pod) {
         var info = document.querySelector('.book-info');
         if (info) {
