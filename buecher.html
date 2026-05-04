@@ -324,6 +324,12 @@
         podcasts = JSON.parse(localStorage.getItem('dearPodcasts') || '[]');
       } catch (e) { podcasts = []; }
 
+      // --- DIAGNOSE (kann später entfernt werden) ---
+      console.info('[buecher.html] dearPodcasts gesamt:', podcasts.length, podcasts);
+      var publishedCount = podcasts.filter(function(p) { return p && p.status === 'published'; }).length;
+      console.info('[buecher.html] davon published:', publishedCount);
+      // ---------------------------------------------
+
       var categoryDefaults = {
         krimi:      { color: '#1e1b4b', emoji: '🔪' },
         fantasy:    { color: '#134e4a', emoji: '🐉' },
